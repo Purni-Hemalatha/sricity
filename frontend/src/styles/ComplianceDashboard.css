@@ -1,0 +1,180 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   ComplianceDashboard.css — Premium Aesthetics
+───────────────────────────────────────────────────────────────────────────── */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #1a1d2e;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.dashboard-header h2 {
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin: 0;
+    background: linear-gradient(135deg, #1a1d2e 0%, #4a5568 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Metrics Cards */
+.metric-card {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.metric-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.metric-card.border-primary::before {
+    background: #3377FF;
+}
+
+.metric-card.border-success::before {
+    background: #10B981;
+}
+
+.metric-card.border-warning::before {
+    background: #F59E0B;
+}
+
+.metric-card.border-danger::before {
+    background: #EF4444;
+}
+
+.metric-icon {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7588;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+}
+
+/* Table Card */
+.card {
+    border-radius: 16px;
+    border: 1px solid #e8eaf0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid #e8eaf0;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #3377FF 0%, #175CFF 100%) !important;
+}
+
+.table thead th {
+    background: #f8fafc;
+    color: #8f90a6;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid #e8eaf0;
+}
+
+.table tbody td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.badge {
+    padding: 0.5em 0.85em;
+    font-weight: 650;
+    border-radius: 8px;
+}
+
+.badge.rounded-pill {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-container>* {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Expanded Row Content */
+tr[key$="-details"] td {
+    background-color: #f8fafc !important;
+    border-left: 4px solid #3377FF;
+}
+
+.btn-group-sm>.btn {
+    padding: 0.4rem 0.8rem;
+    font-weight: 600;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-header h2 {
+        font-size: 1.5rem;
+    }
+}
